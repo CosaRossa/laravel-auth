@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\Task;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller

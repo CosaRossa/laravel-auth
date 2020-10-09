@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                  Employee:
+                  EMPLOYEE:
                   {{$emp -> firstname}}
                   {{$emp -> lastname}}
                 </div>
@@ -29,7 +29,8 @@
                     <a class="btn btn-primary" href="{{route('emp.edit', $emp -> id)}}">EDIT</a>
                     <a class="btn btn-danger" href="{{route('emp.destroy', $emp -> id)}}">DELETE</a>
                   @else
-                    If you want to edit or delete, please login.
+                    If you want to edit or delete:
+                    <a href="{{ route('login') }}">{{ __('Login') }}</a>
                   @endauth
                 </div>
             </div>

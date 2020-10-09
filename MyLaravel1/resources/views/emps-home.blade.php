@@ -9,6 +9,8 @@
                   EMPLOYEES
                   @auth
                     <a class="btn btn-primary float-right" href="{{route('emp.create')}}">NEW</a>
+                  @else
+                    <a class=" btn btn-primary float-right nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                   @endauth
                 </div>
 
@@ -23,11 +25,13 @@
                       </li>
                     @endforeach
                   </ul>
-                  @auth
-                    <div class="text-center">
-                      <a class="btn btn-primary text" href="{{route('emp.create')}}">NEW</a>
-                    </div>
-                  @endauth
+                  <div class="text-center">
+                    @auth
+                      <a class="btn btn-primary" href="{{route('emp.create')}}">NEW</a>
+                    @else
+                      <a class=" btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @endauth
+                  </div>
                 </div>
             </div>
         </div>
