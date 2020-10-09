@@ -1,0 +1,36 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                  EMPLOYEES
+                  @auth
+                    <a class="btn btn-primary float-right" href="{{route('emp.create')}}">NEW</a>
+                  @endauth
+                </div>
+
+                <div class="card-body">
+                  <ul>
+                    @foreach ($emps as $emp)
+                      <li>
+                        <a href="{{route('emp.show', $emp -> id)}}">
+                          {{$emp -> firstname}}
+                          {{$emp -> lastname}}
+                        </a>
+                      </li>
+                    @endforeach
+                  </ul>
+                  @auth
+                    <div class="text-center">
+                      <a class="btn btn-primary text" href="{{route('emp.create')}}">NEW</a>
+                    </div>
+                  @endauth
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
